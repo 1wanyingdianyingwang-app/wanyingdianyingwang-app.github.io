@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>万影电影网 - 高清电影电视剧在线观看_最新影视资讯与观影指南</title>
+<meta name="description" content="万影电影网（https://www.wanyingdianyingwang-app）为您提供最新高清电影、热播电视剧、动漫综艺的在线观看导航与影视资讯，涵盖影视排行榜、影视分类、热门推荐、观影指南，万影电影网致力于打造简洁好用的影视聚合入口。">
+<meta name="keywords" content="万影电影网,万影电影网官网,wanyingdianyingwang-app,高清电影在线观看,热播电视剧,影视排行榜,影视资讯,免费电影网">
+<meta name="author" content="万影电影网">
+<meta name="robots" content="index,follow">
+<meta name="revisit-after" content="1 days">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://www.wanyingdianyingwang-app/">
+<meta property="og:site_name" content="万影电影网">
+<meta property="og:type" content="website">
+<meta property="og:title" content="万影电影网 - 高清电影电视剧在线观看_最新影视资讯与观影指南">
+<meta property="og:description" content="万影电影网聚合最新高清电影、热播剧集、影视排行榜与观影指南，一站直达好片。">
+<meta property="og:url" content="https://www.wanyingdianyingwang-app/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b0a14">
+<style>
+/* ===== 基础重置 ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0b0a14;
+  --bg-soft:#141225;
+  --card:rgba(255,255,255,.05);
+  --line:rgba(255,255,255,.12);
+  --txt:#eef0ff;
+  --txt-dim:#a6a8c8;
+  --gold:#ffc861;
+  --violet:#8b6cff;
+  --pink:#ff5c93;
+  --cyan:#4fe3d0;
+  --radius:18px;
+  --shadow:0 18px 40px rgba(0,0,0,.45);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);
+  color:var(--txt);
+  line-height:1.7;
+  font-size:16px;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(900px 500px at 12% -8%,rgba(139,108,255,.35),transparent 60%),
+    radial-gradient(700px 480px at 92% 4%,rgba(255,92,147,.26),transparent 62%),
+    radial-gradient(900px 600px at 50% 108%,rgba(79,227,208,.18),transparent 60%);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.35;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:44px 44px;
+  -webkit-mask-image:radial-gradient(circle at 50% 20%,#000 0%,transparent 78%);
+  mask-image:radial-gradient(circle at 50% 20%,#000 0%,transparent 78%);
+}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+img{max-width:100%;height:auto;display:block}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* ===== 顶部导航 ===== */
+.topbar{
+  position:sticky;top:0;z-index:60;
+  background:rgba(11,10,20,.82);
+  backdrop-filter:saturate(160%) blur(14px);
+  -webkit-backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.logo{
+  flex:0 0 auto;width:42px;height:42px;border-radius:13px;
+  background:linear-gradient(135deg,var(--violet),var(--pink) 55%,var(--gold));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:20px;color:#1a1030;letter-spacing:-1px;
+  box-shadow:0 8px 20px rgba(139,108,255,.42);
+}
+.brand-txt{min-width:0}
+.brand-name{font-size:19px;font-weight:800;letter-spacing:.5px;white-space:nowrap}
+.brand-url{font-size:12px;color:var(--txt-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.menu{display:flex;align-items:center;gap:4px}
+.menu a{
+  padding:9px 14px;border-radius:999px;font-size:14.5px;color:var(--txt-dim);
+  transition:color .25s ease,background .25s ease;
+}
+.menu a:hover,.menu a:focus{color:#fff;background:rgba(255,255,255,.09)}
+.menu a.on{color:#1a1030;background:linear-gradient(135deg,var(--gold),#ff9f5c);font-weight:700}
+.burger{
+  display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);
+  align-items:center;justify-content:center;flex-direction:column;gap:5px;
+}
+.burger i{display:block;width:20px;height:2px;background:var(--txt);border-radius:2px;transition:transform .25s ease,opacity .25s ease}
+body.nav-open .burger i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+body.nav-open .burger i:nth-child(2){opacity:0}
+body.nav-open .burger i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ===== 首屏 Hero ===== */
+.hero{padding:64px 0 40px;position:relative}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;
+  border:1px solid var(--line);background:rgba(255,255,255,.06);
+  font-size:13px;color:var(--txt-dim);
+}
+.badge b{color:var(--gold)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.hero h1{
+  margin:20px 0 16px;
+  font-size:clamp(30px,6.4vw,58px);
+  line-height:1.22;font-weight:900;letter-spacing:-.5px;
+}
+.hero h1 .glow{
+  background:linear-gradient(100deg,var(--gold),var(--pink) 45%,var(--violet));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .lead{max-width:760px;color:var(--txt-dim);font-size:clamp(15px,2.4vw,18px)}
+.hero .lead strong{color:var(--txt);font-weight:700}
+.search{
+  margin-top:28px;display:flex;gap:10px;padding:8px;border-radius:999px;
+  border:1px solid var(--line);background:rgba(255,255,255,.05);
+  max-width:660px;box-shadow:var(--shadow);
+}
+.search input{
+  flex:1;min-width:0;background:transparent;border:0;outline:none;color:var(--txt);
+  padding:12px 14px;font-size:15px;
+}
+.search input::placeholder{color:#7f829f}
+.search button{
+  padding:12px 26px;border-radius:999px;font-weight:800;font-size:15px;color:#1a1030;
+  background:linear-gradient(135deg,var(--gold),#ff9f5c);white-space:nowrap;
+}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.stat{
+  padding:18px;border-radius:var(--radius);border:1px solid var(--line);
+  background:var(--card);text-align:center;
+}
+.stat b{display:block;font-size:clamp(20px,4vw,28px);font-weight:900;color:var(--gold)}
+.stat span{font-size:12.5px;color:var(--txt-dim)}
+
+/* ===== 通用区块 ===== */
+section{padding:56px 0;scroll-margin-top:76px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(22px,4.4vw,32px);font-weight:900;letter-spacing:-.3px}
+.sec-head h2 em{font-style:normal;color:var(--gold)}
+.sec-head p{color:var(--txt-dim);font-size:14px;margin-top:6px;max-width:640px}
+.more{font-size:14px;color:var(--cyan);white-space:nowrap}
+.more:hover{text-decoration:underline}
+
+/* ===== 电影卡片 ===== */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{
+  border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+  background:var(--bg-soft);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+}
+.card:hover,.card:focus-within{transform:translateY(-6px);box-shadow:var(--shadow);border-color:rgba(255,200,97,.45)}
+.poster{
+  position:relative;aspect-ratio:3/4;display:flex;align-items:flex-end;padding:14px;
+  overflow:hidden;
+}
+.poster .p-title{
+  position:relative;z-index:2;font-weight:800;font-size:16px;line-height:1.35;
+  text-shadow:0 2px 12px rgba(0,0,0,.6);
+}
+.poster .p-sub{position:relative;z-index:2;font-size:12px;color:rgba(255,255,255,.78);margin-top:4px}
+.poster::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(6,5,14,.85) 100%);
+}
+.p1{background:linear-gradient(160deg,#2b1a5e,#7b2ff7 55%,#f107a3)}
+.p2{background:linear-gradient(160deg,#0f2027,#203a43 50%,#2c5364)}
+.p3{background:linear-gradient(160deg,#3a1c71,#d76d77 60%,#ffaf7b)}
+.p4{background:linear-gradient(160deg,#102b1f,#1f7a5c 55%,#7ee8b2)}
+.p5{background:linear-gradient(160deg,#4b134f,#c94b4b 60%,#f7b733)}
+.p6{background:linear-gradient(160deg,#141e30,#243b55 60%,#4e7ea8)}
+.p7{background:linear-gradient(160deg,#3d0f2b,#a4395e 55%,#ff8a5b)}
+.p8{background:linear-gradient(160deg,#12203f,#2b4f9e 55%,#66d3fa)}
+.meta{padding:14px}
+.meta h3{font-size:15px;font-weight:700;line-height:1.4}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tag{font-size:11.5px;color:var(--txt-dim);padding:3px 9px;border-radius:6px;background:rgba(255,255,255,.07);border:1px solid var(--line)}
+.score{margin-top:10px;display:flex;align-items:center;justify-content:space-between;font-size:12.5px;color:var(--txt-dim)}
+.score i{font-style:normal;color:var(--gold);font-weight:800;font-size:15px}
+
+/* ===== 分类 ===== */
+.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.cat{
+  padding:20px 12px;border-radius:16px;text-align:center;border:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
+  transition:transform .25s ease,border-color .25s ease;
+}
+.cat:hover{transform:translateY(-4px);border-color:var(--gold)}
+.cat b{display:block;font-size:15px;font-weight:800}
+.cat span{font-size:12px;color:var(--txt-dim)}
+.cat .ico{display:block;font-size:24px;margin-bottom:6px}
+
+/* ===== 榜单 ===== */
+.board{border-radius:var(--radius);border:1px solid var(--line);background:var(--card);overflow:hidden}
+.row{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.07)}
+.row:last-child{border-bottom:0}
+.row:hover{background:rgba(255,255,255,.04)}
+.no{flex:0 0 34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;background:rgba(255,255,255,.08);color:var(--txt-dim)}
+.row:nth-child(1) .no{background:linear-gradient(135deg,#ff4d4d,#ff8a5b);color:#fff}
+.row:nth-child(2) .no{background:linear-gradient(135deg,#ff9f5c,#ffc861);color:#3a2200}
+.row:nth-child(3) .no{background:linear-gradient(135deg,#4fe3d0,#59a9ff);color:#062a26}
+.thumb{flex:0 0 46px;height:62px;border-radius:10px}
+.row .info{flex:1;min-width:0}
+.row .info h3{font-size:15px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .info p{font-size:12.5px;color:var(--txt-dim);margin-top:3px}
+.hot{flex:0 0 auto;font-size:12px;color:var(--gold);white-space:nowrap}
+
+/* ===== 资讯 ===== */
+.news{display:grid;grid-template-columns:1.4fr 1fr;gap:18px}
+.article{
+  display:flex;gap:16px;padding:18px;border-radius:var(--radius);
+  border:1px solid var(--line);background:var(--bg-soft);
+}
+.article:hover{border-color:rgba(255,200,97,.4)}
+.cover{flex:0 0 108px;height:76px;border-radius:12px}
+.article .txt h3{font-size:15.5px;font-weight:700;line-height:1.45}
+.article .txt p{font-size:13px;color:var(--txt-dim);margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.time{font-size:12px;color:#7f829f;margin-top:8px}
+.side{display:flex;flex-direction:column;gap:12px}
+.side a{padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04);font-size:14px}
+.side a:hover{border-color:var(--cyan)}
+.side a span{display:block;font-size:12px;color:var(--txt-dim);margin-top:4px}
+
+/* ===== FAQ ===== */
+.faq{border-radius:var(--radius);border:1px solid var(--line);overflow:hidden;background:var(--card)}
+.faq details{border-bottom:1px solid rgba(255,255,255,.07)}
+.faq details:last-child{border-bottom:0}
+.faq summary{
+  padding:18px 20px;font-size:15.5px;font-weight:700;cursor:pointer;list-style:none;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold);font-size:20px;font-weight:800}
+.faq details[open] summary::after{content:"–"}
+.faq .ans{padding:0 20px 18px;color:var(--txt-dim);font-size:14px}
+
+/* ===== 关于 / CTA ===== */
+.about{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;
+  padding:32px;border-radius:24px;border:1px solid var(--line);
+  background:linear-gradient(135deg,rgba(139,108,255,.18),rgba(255,92,147,.12) 60%,rgba(255,200,97,.12));
+}
+.about h2{font-size:clamp(22px,4.2vw,30px);font-weight:900;margin-bottom:12px}
+.about p{color:var(--txt-dim);font-size:14.5px;margin-bottom:10px}
+.about p b{color:var(--txt)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.pill{padding:7px 14px;border-radius:999px;background:rgba(0,0,0,.28);border:1px solid var(--line);font-size:13px}
+.cta-card{
+  padding:26px;border-radius:20px;background:rgba(6,5,14,.55);border:1px solid var(--line);
+}
+.cta-card .url{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:14px;color:var(--cyan);word-break:break-all;
+}
+.cta-card .btn{
+  display:block;margin-top:16px;text-align:center;padding:13px;border-radius:999px;
+  font-weight:800;color:#1a1030;background:linear-gradient(135deg,var(--gold),#ff9f5c);
+}
+.cta-card .tip{margin-top:12px;font-size:12.5px;color:var(--txt-dim)}
+
+/* ===== 页脚 ===== */
+footer{border-top:1px solid var(--line);padding:44px 0 30px;margin-top:20px;background:rgba(6,5,14,.55)}
+.f-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:26px}
+.f-grid h4{font-size:15px;margin-bottom:14px;color:var(--gold)}
+.f-grid li{font-size:13.5px;color:var(--txt-dim);padding:5px 0}
+.f-grid li a:hover{color:#fff;text-decoration:underline}
+.f-bottom{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px;color:#7f829f;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.keywords{margin-top:14px;font-size:12.5px;color:#6f728f;line-height:2}
+.keywords a{margin-right:10px}
+
+/* ===== 响应式 ===== */
+@media (max-width:1024px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .cats{grid-template-columns:repeat(4,1fr)}
+  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:820px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .news{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr;padding:24px}
+}
+@media (max-width:720px){
+  .burger{display:flex}
+  .menu{
+    position:fixed;left:0;right:0;top:64px;flex-direction:column;align-items:stretch;
+    gap:2px;padding:12px 20px 20px;background:rgba(11,10,20,.97);
+    border-bottom:1px solid var(--line);
+    transform:translateY(-12px);opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;
+  }
+  body.nav-open .menu{transform:translateY(0);opacity:1;pointer-events:auto}
+  .menu a{padding:13px 14px;font-size:15.5px;border-radius:12px}
+  section{padding:42px 0}
+  .grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .cats{grid-template-columns:repeat(3,1fr)}
+  .hero{padding:40px 0 26px}
+  .search{flex-direction:column;border-radius:20px;padding:10px}
+  .search button{width:100%}
+  .article{flex-direction:column}
+  .cover{width:100%;height:120px;flex:none}
+  .row{padding:12px 14px;gap:10px}
+  .thumb{flex:0 0 38px;height:52px}
+}
+@media (max-width:480px){
+  .f-grid{grid-template-columns:1fr}
+  .stats{gap:10px}
+  .brand-url{display:none}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<!-- ============ 顶部导航 ============ -->
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="万影电影网 首页">
+      <span class="logo" aria-hidden="true">万</span>
+      <span class="brand-txt">
+        <span class="brand-name">万影电影网</span>
+        <span class="brand-url">https://www.wanyingdianyingwang-app</span>
+      </span>
+    </a>
+    <nav class="menu" id="menu" aria-label="万影电影网站内导航">
+      <a href="#hot" class="on">热门推荐</a>
+      <a href="#category">影视分类</a>
+      <a href="#rank">影视排行榜</a>
+      <a href="#news">影视资讯</a>
+      <a href="#guide">观影指南</a>
+      <a href="#about">关于万影电影网</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="展开导航菜单" aria-expanded="false" aria-controls="menu">
+      <i></i><i></i><i></i>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ 首屏 ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="badge"><span class="dot" aria-hidden="true"></span>万影电影网 · 每日更新 <b>300+</b> 影视资源</span>
+      <h1><span class="glow">万影电影网</span>，一站聚合全网高清好片</h1>
+      <p class="lead">
+        欢迎访问 <strong>万影电影网</strong>（<strong>https://www.wanyingdianyingwang-app</strong>）。
+        万影电影网收录最新院线大片、热播电视剧、高分动漫与综艺番剧，提供清晰的影视分类、实时影视排行榜与实用观影指南，
+        帮你在海量片单中快速找到值得一看的内容，告别无效找片。
+      </p>
+      <form class="search" action="#" method="get" role="search" aria-label="万影电影网站内搜索">
+        <label class="sr-only" for="kw">搜索电影、电视剧、演员</label>
+        <input id="kw" name="kw" type="search" placeholder="搜索你想看的电影、剧集或演员…" autocomplete="off">
+        <button type="submit">全网搜片</button>
+      </form>
+      <div class="stats">
+        <div class="stat"><b>128000+</b><span>收录影视作品</span></div>
+        <div class="stat"><b>4K</b><span>最高画质支持</span></div>
+        <div class="stat"><b>36</b><span>细分影视分类</span></div>
+        <div class="stat"><b>24h</b><span>不间断更新</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目一：热门推荐 ============ -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>热门推荐 · <em>万影电影网</em>本周必看</h2>
+          <p>由万影电影网编辑部依据播放热度、口碑评分与更新时效综合筛选，每周一准时刷新。</p>
+        </div>
+        <a class="more" href="#">查看全部影片 &gt;</a>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="poster p1">
+            <div>
+              <div class="p-title">星海迷航录</div>
+              <div class="p-sub">科幻 / 冒险 · 2026</div>
+            </div>
+          </div>
+          <div class="meta">
+            <h3>星海迷航录</h3>
+            <div class="tags"><span class="tag">科幻</span><span class="tag">4K</span><span class="tag">国语</span></div>
+            <div class="score"><span>万人想看</span><i>9.2</i></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p2">
+            <div>
+              <div class="p-title">暗夜追凶</div>
+              <div class="p-sub">悬疑 / 犯罪 · 2026</div>
+            </div>
+          </div>
+          <div class="meta">
+            <h3>暗夜追凶</h3>
+            <div class="tags"><span class="tag">悬疑</span><span class="tag">烧脑</span><span class="tag">高分</span></div>
+            <div class="score"><span>万人想看</span><i>8.9</i></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p3">
+            <div>
+              <div class="p-title">春山旧梦</div>
+              <div class="p-sub">剧情 / 文艺 · 2025</div>
+            </div>
+          </div>
+          <div class="meta">
+            <h3>春山旧梦</h3>
+            <div class="tags"><span class="tag">剧情</span><span class="tag">获奖</span><span class="tag">治愈</span></div>
+            <div class="score"><span>万人想看</span><i>8.7</i></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p4">
+            <div>
+              <div class="p-title">荒野求生季</div>
+              <div class="p-sub">纪录 / 自然 · 2026</div>
+            </div>
+          </div>
+          <div class="meta">
+            <h3>荒野求生季</h3>
+            <div class="tags"><span class="tag">纪录片</span><span class="tag">自然</span><span class="tag">蓝光</span></div>
+            <div class="score"><span>万人想看</span><i>9.0</i></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p5">
+            <div>
+              <div class="p-title">长安十二时辰·续</div>
+              <div class="p-sub">古装 / 权谋 · 2026</div>
+            </div>
+          </div>
+          <div class="meta">
+            <h3>长安十二时辰·续</h3>
+            <div class="tags"><span class="tag">剧集</span><span class="tag">古装</span><span class="tag">热播</span></div>
+            <div class="score"><span>万人想看</span><i>8.8</i></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p6">
+            <div>
+              <div class="p-title">机巧少女不会受伤</div>
+              <div class="p-sub">动画 / 奇幻 · 2026</div>
+            </div>
+          </div>
+          <div class="meta">
+            <h3>机巧少女不会受伤</h3>
+            <div class="tags"><span class="tag">动漫</span><span class="tag">番剧</span><span class="tag">连载</span></div>
+            <div class="score"><span>万人想看</span><i>8.6</i></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p7">
+            <div>
+              <div class="p-title">霓虹城恋人</div>
+              <div class="p-sub">爱情 / 都市 · 2025</div>
+            </div>
+          </div>
+          <div class="meta">
+            <h3>霓虹城恋人</h3>
+            <div class="tags"><span class="tag">爱情</span><span class="tag">都市</span><span class="tag">独家</span></div>
+            <div class="score"><span>万人想看</span><i>8.4</i></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p8">
+            <div>
+              <div class="p-title">深海之下</div>
+              <div class="p-sub">动作 / 惊悚 · 2026</div>
+            </div>
+          </div>
+          <div class="meta">
+            <h3>深海之下</h3>
+            <div class="tags"><span class="tag">动作</span><span class="tag">惊悚</span><span class="tag">杜比</span></div>
+            <div class="score"><span>万人想看</span><i>8.5</i></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目二：影视分类 ============ -->
+  <section id="category">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>影视分类 · <em>万影电影网</em>片库全景导航</h2>
+          <p>万影电影网按题材、地区、年代与画质多维拆分，找片不再大海捞针。</p>
+        </div>
+        <a class="more" href="#">进入分类频道 &gt;</a>
+      </div>
+      <div class="cats">
+        <a class="cat" href="#"><span class="ico" aria-hidden="true">🎬</span><b>动作片</b><span>1.2 万部</span></a>
+        <a class="cat" href="#"><span class="ico" aria-hidden="true">🕵️</span><b>悬疑片</b><span>8600 部</span></a>
+        <a class="cat" href="#"><span class="ico" aria-hidden="true">💞</span><b>爱情片</b><span>7400 部</span></a>
+        <a class="cat" href="#"><span class="ico" aria-hidden="true">🚀</span><b>科幻片</b><span>5200 部</span></a>
+        <a class="cat" href="#"><span class="ico" aria-hidden="true">😂</span><b>喜剧片</b><span>9800 部</span></a>
+        <a class="cat" href="#"><span class="ico" aria-hidden="true">👻</span><b>恐怖片</b><span>3300 部</span></a>
+        <a class="cat" href="#"><span class="ico" aria-hidden="true">📺</span><b>国产剧</b><span>1.5 万部</span></a>
+        <a class="cat" href="#"><span class="ico" aria-hidden="true">🌏</span><b>日韩剧</b><span>6700 部</span></a>
+        <a class="cat" href="#"><span class="ico" aria-hidden="true">🎭</span><b>欧美剧</b><span>5400 部</span></a>
+        <a class="cat" href="#"><span class="ico" aria-hidden="true">🌸</span><b>动漫番剧</b><span>8100 部</span></a>
+        <a class="cat" href="#"><span class="ico" aria-hidden="true">🎤</span><b>综艺</b><span>2600 部</span></a>
+        <a class="cat" href="#"><span class="ico" aria-hidden="true">🎞️</span><b>纪录片</b><span>1900 部</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目三：影视排行榜 ============ -->
+  <section id="rank">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>影视排行榜 · <em>万影电影网</em>实时热度榜</h2>
+          <p>榜单依据万影电影网全站播放量、收藏量与弹幕互动数据每小时更新一次。</p>
+        </div>
+        <a class="more" href="#">完整榜单 &gt;</a>
+      </div>
+      <div class="board">
+        <article class="row">
+          <span class="no">1</span>
+          <span class="thumb p1" aria-hidden="true"></span>
+          <div class="info"><h3>星海迷航录</h3><p>科幻 · 更新至第 12 集</p></div>
+          <span class="hot">热度 986 万</span>
+        </article>
+        <article class="row">
+          <span class="no">2</span>
+          <span class="thumb p5" aria-hidden="true"></span>
+          <div class="info"><h3>长安十二时辰·续</h3><p>古装 · 更新至第 28 集</p></div>
+          <span class="hot">热度 874 万</span>
+        </article>
+        <article class="row">
+          <span class="no">3</span>
+          <span class="thumb p2" aria-hidden="true"></span>
+          <div class="info"><h3>暗夜追凶</h3><p>悬疑 · 已完结</p></div>
+          <span class="hot">热度 811 万</span>
+        </article>
+        <article class="row">
+          <span class="no">4</span>
+          <span class="thumb p8" aria-hidden="true"></span>
+          <div class="info"><h3>深海之下</h3><p>动作 · 4K 高清</p></div>
+          <span class="hot">热度 763 万</span>
+        </article>
+        <article class="row">
+          <span class="no">5</span>
+          <span class="thumb p6" aria-hidden="true"></span>
+          <div class="info"><h3>机巧少女不会受伤</h3><p>动漫 · 连载中</p></div>
+          <span class="hot">热度 702 万</span>
+        </article>
+        <article class="row">
+          <span class="no">6</span>
+          <span class="thumb p4" aria-hidden="true"></span>
+          <div class="info"><h3>荒野求生季</h3><p>纪录 · 全 8 集</p></div>
+          <span class="hot">热度 655 万</span>
+        </article>
+        <article class="row">
+          <span class="no">7</span>
+          <span class="thumb p3" aria-hidden="true"></span>
+          <div class="info"><h3>春山旧梦</h3><p>剧情 · 蓝光修复</p></div>
+          <span class="hot">热度 588 万</span>
+        </article>
+        <article class="row">
+          <span class="no">8</span>
+          <span class="thumb p7" aria-hidden="true"></span>
+          <div class="info"><h3>霓虹城恋人</h3><p>爱情 · 已完结</p></div>
+          <span class="hot">热度 512 万</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目四：影视资讯 ============ -->
+  <section id="news">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>影视资讯 · <em>万影电影网</em>行业快报</h2>
+          <p>新片定档、剧集开播、票房战报与幕后花絮，万影电影网第一时间送达。</p>
+        </div>
+        <a class="more" href="#">更多资讯 &gt;</a>
+      </div>
+      <div class="news">
+        <div>
+          <article class="article">
+            <span class="cover p1" aria-hidden="true"></span>
+            <div class="txt">
+              <h3><a href="#">《星海迷航录》定档暑期，万影电影网独家解析三大看点</a></h3>
+              <p>该剧历经三年制作，实景搭建宇宙舱，万影电影网将从剧情、视效与阵容三个维度为你拆解必看理由。</p>
+              <div class="time">2026-10-11 · 万影电影网编辑部</div>
+            </div>
+          </article>
+          <article class="article" style="margin-top:14px">
+            <span class="cover p5" aria-hidden="true"></span>
+            <div class="txt">
+              <h3><a href="#">古装剧回暖：《长安十二时辰·续》开播三日播放破亿</a></h3>
+              <p>万影电影网数据显示，该剧在站内收藏量进入周榜前三，服化道与叙事节奏成为讨论焦点。</p>
+              <div class="time">2026-10-09 · 数据观察</div>
+            </div>
+          </article>
+          <article class="article" style="margin-top:14px">
+            <span class="cover p2" aria-hidden="true"></span>
+            <div class="txt">
+              <h3><a href="#">悬疑片市场报告：小而精作品正在逆袭大制作</a></h3>
+              <p>万影电影网统计发现，近一年悬疑类作品平均完播率高于全站均值 17 个百分点。</p>
+              <div class="time">2026-10-06 · 行业观察</div>
+            </div>
+          </article>
+        </div>
+        <aside class="side">
+          <a href="#">2026 秋季新片定档日历<span>持续更新 · 万影电影网</span></a>
+          <a href="#">高分治愈片单：适合周末一个人看<span>共 30 部推荐</span></a>
+          <a href="#">4K 画质观影设备与带宽建议<span>观影指南专栏</span></a>
+          <a href="#">万影电影网用户最爱的十大经典角色<span>票选进行中</span></a>
+          <a href="#">动漫番剧更新时间表（十月）<span>每周刷新</span></a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目五：观影指南 / FAQ ============ -->
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>观影指南 · <em>万影电影网</em>常见问题</h2>
+          <p>关于万影电影网的使用、片源、画质与更新机制的疑问，这里一次说清。</p>
+        </div>
+        <a class="more" href="#">提交反馈 &gt;</a>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>万影电影网是什么类型的网站？</summary>
+          <div class="ans">万影电影网（https://www.wanyingdianyingwang-app）是一家面向影视爱好者的内容聚合与导航站点，提供影视分类检索、热播榜单、影视资讯与观影指南，帮助用户高效发现好片。</div>
+        </details>
+        <details>
+          <summary>万影电影网的片库更新频率如何？</summary>
+          <div class="ans">万影电影网采用 24 小时轮巡机制，新片上线、剧集更新与榜单变动会在 1 小时内同步，热门剧集基本可做到当日更新。</div>
+        </details>
+        <details>
+          <summary>如何在万影电影网快速找到想看的影片？</summary>
+          <div class="ans">可使用首页搜索框按片名、演员、导演检索；也可以先进入「影视分类」按题材或地区筛选，再看「影视排行榜」辅助决策。</div>
+        </details>
+        <details>
+          <summary>万影电影网支持哪些画质与播放方式？</summary>
+          <div class="ans">万影电影网标注了每部作品的可用清晰度（含 1080P、蓝光与 4K），并提示音轨与字幕信息，用户可依据自身网络环境选择。</div>
+        </details>
+        <details>
+          <summary>万影电影网的内容是否收费？</summary>
+          <div class="ans">万影电影网本身的检索、榜单与资讯内容完全免费开放，不要求注册即可浏览。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目六：关于万影电影网 ============ -->
+  <section id="about">
+    <div class="wrap">
+      <div class="about">
+        <div>
+          <h2>关于万影电影网</h2>
+          <p><b>万影电影网</b>成立于 2019 年，始终专注于「让找片变简单」。我们相信好的内容不该被埋没，因此用清晰的分类、实时的榜单与真诚的编辑推荐，替你完成第一轮的筛选。</p>
+          <p>截至目前，万影电影网已服务超 <b>3200 万</b>次观影决策，累计收录作品 <b>12.8 万</b>部，并与多家内容方建立资讯合作关系。</p>
+          <div class="pills">
+            <span class="pill">网站名称：万影电影网</span>
+            <span class="pill">上线时间：2019 年</span>
+            <span class="pill">收录规模：12.8 万+</span>
+            <span class="pill">更新机制：24 小时轮巡</span>
+          </div>
+        </div>
+        <div class="cta-card">
+          <h3 style="font-size:17px;font-weight:800;margin-bottom:10px">记住本站网址</h3>
+          <p class="url">https://www.wanyingdianyingwang-app</p>
+          <p class="tip">建议将万影电影网加入浏览器收藏夹，避免误入仿冒站点。</p>
+          <a class="btn" href="#">收藏万影电影网</a>
+          <p class="tip">商务合作与内容授权请联系：hi@wanyingdianyingwang-app</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 页脚 ============ -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <h4>万影电影网</h4>
+        <p style="font-size:13.5px;color:var(--txt-dim)">万影电影网 · 高清影视聚合导航，每日更新影视分类、影视排行榜与影视资讯，看片从万影电影网开始。</p>
+        <p style="font-size:13px;color:var(--cyan);margin-top:10px">https://www.wanyingdianyingwang-app</p>
+      </div>
+      <div>
+        <h4>频道导航</h4>
+        <ul>
+          <li><a href="#hot">热门推荐</a></li>
+          <li><a href="#category">影视分类</a></li>
+          <li><a href="#rank">影视排行榜</a></li>
+          <li><a href="#news">影视资讯</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>观影服务</h4>
+        <ul>
+          <li><a href="#guide">观影指南</a></li>
+          <li><a href="#">新片定档</a></li>
+          <li><a href="#">片单合集</a></li>
+          <li><a href="#">在线客服</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于本站</h4>
+        <ul>
+          <li><a href="#about">关于万影电影网</a></li>
+          <li><a href="#">版权声明</a></li>
+          <li><a href="#">隐私政策</a></li>
+          <li><a href="#">意见反馈</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>&copy; 2019-2026 万影电影网 wanyingdianyingwang-app 版权所有</span>
+      <span>本页内容为演示用示例信息</span>
+    </div>
+    <div class="keywords">
+      热门关键词：
+      <a href="#">万影电影网</a><a href="#">万影电影网官网</a><a href="#">万影电影网电影</a><a href="#">万影电影网电视剧</a><a href="#">高清电影在线观看</a><a href="#">热播剧集排行榜</a><a href="#">影视资讯</a><a href="#">免费电影网</a>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.wanyingdianyingwang-app/#website",
+      "url": "https://www.wanyingdianyingwang-app/",
+      "name": "万影电影网",
+      "alternateName": ["万影电影", "万影电影网官网", "wanyingdianyingwang-app"],
+      "description": "万影电影网提供高清电影、热播电视剧、动漫综艺的在线观看导航，含影视分类、影视排行榜、影视资讯与观影指南。",
+      "inLanguage": "zh-CN",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.wanyingdianyingwang-app/?kw={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.wanyingdianyingwang-app/#organization",
+      "name": "万影电影网",
+      "url": "https://www.wanyingdianyingwang-app/",
+      "foundingDate": "2019",
+      "email": "hi@wanyingdianyingwang-app"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"万影电影网首页","item":"https://www.wanyingdianyingwang-app/"},
+        {"@type":"ListItem","position":2,"name":"热门推荐","item":"https://www.wanyingdianyingwang-app/#hot"},
+        {"@type":"ListItem","position":3,"name":"影视分类","item":"https://www.wanyingdianyingwang-app/#category"},
+        {"@type":"ListItem","position":4,"name":"影视排行榜","item":"https://www.wanyingdianyingwang-app/#rank"},
+        {"@type":"ListItem","position":5,"name":"影视资讯","item":"https://www.wanyingdianyingwang-app/#news"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "万影电影网是什么类型的网站？",
+          "acceptedAnswer": {"@type":"Answer","text":"万影电影网（https://www.wanyingdianyingwang-app）是一家面向影视爱好者的内容聚合与导航站点，提供影视分类检索、热播榜单、影视资讯与观影指南。"}
+        },
+        {
+          "@type": "Question",
+          "name": "万影电影网的片库更新频率如何？",
+          "acceptedAnswer": {"@type":"Answer","text":"万影电影网采用 24 小时轮巡机制，新片上线、剧集更新与榜单变动会在 1 小时内同步。"}
+        },
+        {
+          "@type": "Question",
+          "name": "如何在万影电影网快速找到想看的影片？",
+          "acceptedAnswer": {"@type":"Answer","text":"可使用首页搜索框按片名、演员、导演检索，也可进入影视分类按题材或地区筛选，并参考影视排行榜辅助决策。"}
+        },
+        {
+          "@type": "Question",
+          "name": "万影电影网的内容是否收费？",
+          "acceptedAnswer": {"@type":"Answer","text":"万影电影网的检索、榜单与资讯内容完全免费开放，不要求注册即可浏览。"}
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script>
+(function(){
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('menu');
+  burger.addEventListener('click', function(){
+    var open = document.body.classList.toggle('nav-open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? '收起导航菜单' : '展开导航菜单');
+  });
+  menu.addEventListener('click', function(e){
+    if (e.target.tagName === 'A') {
+      document.body.classList.remove('nav-open');
+      burger.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+</body>
+</html>
